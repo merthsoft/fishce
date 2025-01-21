@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "debug.h": "c",
+        "main.h": "c",
+        "ability.h": "c",
+        "screen.h": "c",
+        "lcd.h": "c",
+        "stdlib.h": "c",
+        "graphx.h": "c"
+    }
+}

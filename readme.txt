@@ -5,7 +5,7 @@ Fish CE is simple fish simulation for the TI-84+CE. Based on the hit simulation 
 
 Watch the fish swim. Sometimes they get spooked and switch direction and swim faster.
 
-Two quit, press MODE, DEL, CLEAR, or ENTER.
+To quit, press MODE, DEL, CLEAR, or ENTER.
 
 Press plus and minus to change the background color (by +/-1).
 Multiply and divide also change it more drastically (by +/-10).

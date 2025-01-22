@@ -94,15 +94,15 @@ int main(void)
 
         if (kb_IsDown(kb_KeyDecPnt))
         {
-            gfx_SetTextFGColor(~backgroundColor == 255 ? 254 : ~backgroundColor);
+            gfx_SetTextFGColor(backgroundColor == 0 ? DEFAULT_BACKGROUND_COLOR : ~backgroundColor);
             gfx_SetTextXY(2, GFX_LCD_HEIGHT - 10);
-            gfx_PrintUInt(backgroundColor, 0);
+            gfx_PrintUInt(backgroundColor, 1);
         }
 
 #ifdef DEBUG
-        gfx_SetTextFGColor(~backgroundColor == 255 ? 254 : ~backgroundColor);
+        gfx_SetTextFGColor(backgroundColor == 0 ? DEFAULT_BACKGROUND_COLOR : ~backgroundColor);
         sprintf(buffer, "FPS: %.2f", fps);
-        gfx_PrintStringXY(buffer, 1, 1);
+        gfx_PrintStringXY(buffer, 2, 2);
 #endif
 
         gfx_SwapDraw();

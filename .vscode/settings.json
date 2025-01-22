@@ -6,6 +6,8 @@
         "screen.h": "c",
         "lcd.h": "c",
         "stdlib.h": "c",
-        "graphx.h": "c"
+        "graphx.h": "c",
+        "render.h": "c",
+        "fish.h": "c"
     }
 }

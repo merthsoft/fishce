@@ -8,36 +8,25 @@
 extern "C" {
 #endif
 
-#define MAX_WIDTH 20
-#define MIN_WIDTH 4
-
-#define MAX_HEIGHT 20
-#define MIN_HEIGHT 4
-
-#define MARGIN 10
-
-#define MAXSPEED 4.0f
-#define MINSPEED 0.5f
-
-#define MAXSPOOKEDSPEED 9.0f
-
-#define SPOOKCHANCE 666
+#define APPVAR_NOT_FOUND 255
 
 typedef enum FishDirection { fd_Right, fd_Left } FishDirection;
 
 typedef struct Fish {
-    bool            Visible;
-    uint8_t         Color;
     FishDirection   Direction;
+    uint8_t         Color;
+    uint8_t         Width;
+    uint8_t         Height;
     float           X;
     float           Y;
     float           Speed;
-    float           Width;
-    float           Height;
 } Fish;
 
 void Fish_Generate(Fish* fish);
 void Fish_Update(Fish* fish);
+
+uint8_t Fish_Write(Fish* fishes, uint8_t numFishes, uint8_t backgroundColor);
+uint8_t Fish_Read(Fish* fishes, uint8_t* numFishes, uint8_t* backgroundColor);
 
 #ifdef __cplusplus
 }

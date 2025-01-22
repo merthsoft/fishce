@@ -8,7 +8,7 @@ DESCRIPTION = "Fishies"
 COMPRESSED = NO
 ARCHIVED = NO
 
-CFLAGS = -Wall -Wextra -Oz
+CFLAGS = -Wall -Wextra -Ofast
 CXXFLAGS = -Wall -Wextra -Oz
 
 # ----------------------------

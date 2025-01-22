@@ -149,6 +149,8 @@ uint8_t Fish_Write(Fish* fishes, uint8_t numFishes, uint8_t backgroundColor)
         return 6;
     }
 
+    ti_SetArchiveStatus(true, var);
+    ti_Close(var);
     return 0;
 }
 

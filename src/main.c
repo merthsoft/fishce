@@ -47,7 +47,9 @@ static inline bool step(Fish* fishes, const uint8_t maxFish, uint8_t* background
         *backgroundColor = bgc + 10;
     else if (kb_IsDown(kb_KeyDiv))
         *backgroundColor = bgc - 10;
-    else if (kb_IsDown(kb_0))
+    else if (kb_IsDown(kb_KeyChs))
+        *backgroundColor = 0;
+    else if (kb_IsDown(kb_Key0))
         *backgroundColor = DEFAULT_BACKGROUND_COLOR;
 
     return !(kb_IsDown(kb_KeyDel) | kb_IsDown(kb_KeyClear) | kb_IsDown(kb_KeyMode) | kb_IsDown(kb_KeyEnter));
@@ -90,7 +92,15 @@ int main(void)
 #endif
         draw(Fishes, MAX_FISH, backgroundColor);
 
+        if (kb_IsDown(kb_KeyDecPnt))
+        {
+            gfx_SetTextFGColor(~backgroundColor == 255 ? 254 : ~backgroundColor);
+            gfx_SetTextXY(2, GFX_LCD_HEIGHT - 10);
+            gfx_PrintUInt(backgroundColor, 0);
+        }
+
 #ifdef DEBUG
+        gfx_SetTextFGColor(~backgroundColor == 255 ? 254 : ~backgroundColor);
         sprintf(buffer, "FPS: %.2f", fps);
         gfx_PrintStringXY(buffer, 1, 1);
 #endif
